@@ -10,3 +10,7 @@ Antes de publicar:
 2. Reemplazar los enlaces # de Instagram/Facebook.
 3. Sustituir los fondos de producto por fotografías reales si se desea.
 4. Ajustar textos, sabores, zonas de delivery y tiempos de pedido.
+
+
+Imágenes temporales:
+Las fotografías de cheesecake incluidas son placeholders encontrados en la web para la maqueta y deben reemplazarse por fotografías oficiales de FRAVELLA antes de la publicación definitiva.

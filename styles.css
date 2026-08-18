@@ -1,10 +1,10 @@
 :root {
-  --cream: #f4ecde;
-  --cream-2: #eee1cf;
-  --wine: #641321;
-  --wine-dark: #3b0b14;
-  --ink: #2a1718;
-  --line: rgba(100, 19, 33, .28);
+  --cream: #f4ede1;
+  --cream-2: #efe6d9;
+  --wine: #5b0b1a;
+  --wine-dark: #3a0710;
+  --ink: #1e1e1e;
+  --line: rgba(91, 11, 26, .28);
 }
 
 * { box-sizing: border-box; }
@@ -25,10 +25,11 @@ h1,h2,h3 { font-family: "Playfair Display", serif; font-weight: 500; }
   align-items: center; gap: 32px;
   padding: 18px 4vw;
   border-bottom: 1px solid var(--line);
-  background: rgba(244,236,222,.92);
+  background: rgba(244,237,225,.92);
   backdrop-filter: blur(12px);
 }
-.brand { font-family: "Playfair Display", serif; font-size: 20px; letter-spacing: .16em; font-weight: 600; }
+.brand { display:flex; align-items:center; }
+.brand img { display:block; width:150px; max-height:44px; object-fit:contain; object-position:left center; }
 .nav { display: flex; gap: 28px; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
 .header-cta {
   justify-self: end;
@@ -44,7 +45,7 @@ h1,h2,h3 { font-family: "Playfair Display", serif; font-weight: 500; }
   border-bottom: 1px solid var(--line);
 }
 .hero-kicker,.section-index,.mini-stats,.hero-note {
-  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  font-family: "Cinzel", serif; font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
 }
 .hero-grid {
   display: grid; grid-template-columns: 1.15fr .85fr; gap: 4vw;
@@ -72,20 +73,18 @@ h1,h2,h3 { font-family: "Playfair Display", serif; font-weight: 500; }
 .photo-main {
   display: flex; align-items: center; justify-content: center;
   background:
-    radial-gradient(circle at 35% 30%, rgba(255,255,255,.5), transparent 26%),
-    linear-gradient(145deg, #d6b79d 0%, #a8666c 48%, #651423 100%);
+    linear-gradient(rgba(91,11,26,.08), rgba(91,11,26,.08)),
+    url("cheesecake-2.jpg") center/cover no-repeat;
   border-radius: 50% 50% 8px 8px / 18% 18% 8px 8px;
   overflow: hidden;
   position: relative;
 }
 .photo-main:after {
   content: "";
-  width: 55%; aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%, #fff7ea 0 45%, #d8ad93 46% 56%, #8e2a3c 57% 61%, #fff2e0 62%);
-  box-shadow: 0 30px 80px rgba(55,5,14,.25);
-}
-.photo-main span {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(30,30,30,.04), rgba(91,11,26,.22));
+  pointer-events: none;
+}.photo-main span {
   position: absolute; z-index: 2; top: 28px; left: 28px;
   color: var(--cream); letter-spacing: .2em; font-size: 11px;
 }
@@ -129,9 +128,9 @@ h1,h2,h3 { font-family: "Playfair Display", serif; font-weight: 500; }
   border: 1px solid currentColor; border-radius: 50%;
   font-size: 11px;
 }
-.image-one { background: linear-gradient(160deg,#dcbfb0,#8f4050); color: #fff4e5; }
-.image-two { background: linear-gradient(160deg,#efdec5,#ba7b73 55%,#651423); color: #fff4e5; }
-.image-three { background: linear-gradient(160deg,#b8737c,#5b0e1c); color: #fff4e5; }
+.image-one { background: linear-gradient(rgba(30,30,30,.06),rgba(91,11,26,.12)), url("cheesecake-1.webp") center/cover no-repeat; color: #fff4e5; }
+.image-two { background: linear-gradient(rgba(30,30,30,.06),rgba(91,11,26,.12)), url("cheesecake-2.jpg") center/cover no-repeat; color: #fff4e5; }
+.image-three { background: linear-gradient(rgba(30,30,30,.06),rgba(91,11,26,.12)), url("cheesecake-3.jpg") center/cover no-repeat; color: #fff4e5; }
 .product-meta { padding: 18px 0 12px; }
 .product-meta h3 { font-size: 27px; margin-bottom: 8px; }
 .product-meta p { color: var(--ink); line-height: 1.5; min-height: 48px; }
@@ -209,4 +208,23 @@ footer div { display: flex; flex-direction: column; gap: 8px; }
   .feature-panel { padding-left: 18px; padding-right: 18px; }
   .section-head h2, .process h2, .feature h2, .contact h2 { font-size: 48px; }
   footer { grid-template-columns: 1fr; padding: 32px 18px; }
+}
+
+/* FRAVELLA brand system */
+.footer-brand img { width:180px; max-width:100%; display:block; filter:none; }
+.footer-brand { display:block; }
+@media (max-width:600px){ .brand img{width:118px;} }
+
+/* FRAVELLA requested fixes */
+.site-header {
+  background: #F4EDE1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+footer .logo-wrap,
+footer .footer-brand {
+  background: transparent !important;
+  box-shadow: none !important;
 }
